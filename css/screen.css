@@ -1,0 +1,63 @@
+/*For screen use
+Author: Justin Bartrum*/
+:root {
+    --backGr: #FAFAF9;
+    --pText: #3E3E3E;
+    --head: #4a5d4e;
+    --sText: #737373;
+    --accent: #A68a64;
+}
+
+body {
+    margin: 0%;
+    background-color: var(--backGr);
+    color: var(--pText);
+}
+header{
+    background-color: var(--head);
+}
+#topBar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: var(--head);
+    color: var(--backGr);
+    padding: 1em 1em;
+    }
+#topBar #personal {
+    max-width: fit-content;
+}
+#topBar h3{
+    max-width: fit-content;
+}
+#topBar button{
+
+    background-color: var(--pText);
+}
+#topBar a:link{
+    text-decoration: none;
+    color: var(--accent);   
+}
+#summary{
+    max-width: 70%;
+    padding-left: 10%;
+    justify-items: end;
+    align-self: center;
+}
+
+
+nav{
+    margin: 0%;
+    background-color: var(--sText);
+    color: var(--backGr);
+}
+#list{
+    padding: 10px 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;    
+}
+#list li>a{
+    text-decoration: none;
+    color: var(--backGr);
+}
