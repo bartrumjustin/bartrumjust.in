@@ -12,6 +12,7 @@ body {
     margin: 0%;
     background-color: var(--backGr);
     color: var(--pText);
+    font-family: 'Inter','Times New Roman', 'san-serif';
 }
 header{
     background-color: var(--head);
@@ -83,10 +84,22 @@ main{
     background-color: var(--head);
     color: var(--backGr);
 }
+.techSkillContent ul li{
+    margin:2% 0%;
+    font-size: 1.1em;
+    font-weight: 800;
+}
 #lower1{
     grid-column: 2;
     grid-row: 1 / span 2;
 }
 #lower2 {
     grid-column: 3;
+}
+#proExp section{
+    margin: 2% 0%;
+}
+#proExp summary{
+    font-size: 1.4em;
+    font-weight: 700;
 }
