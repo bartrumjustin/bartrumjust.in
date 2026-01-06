@@ -64,7 +64,7 @@ nav{
 }
 main{
     color: var(--pText);
-    padding: 1em;
+    margin: 1em;
 }
 #techSkill{
     display: grid;
@@ -102,4 +102,21 @@ main{
 #proExp summary{
     font-size: 1.4em;
     font-weight: 700;
+}
+.bulletpoint{
+    max-width: 75em;
+    background-color: #d3d3d3;
+    line-height: 2.5;
+    border-radius: 2em;
+    margin-left: 1em;
+    text-align: start;
+    box-shadow:0 0 10px #a4aea6 ;
+}
+#proj{
+    text-align: center;
+    justify-self: center;
+}
+#eduCert{
+    text-align: center;
+    justify-self: end;
 }
