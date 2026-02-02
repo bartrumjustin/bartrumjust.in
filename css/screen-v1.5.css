@@ -1,6 +1,6 @@
 /*For screen use
 Author: Justin Bartrum
-version: 1.5*/
+version: 2.0*/
 :root {
     --backGr: #FAFAF9;
     --pText: #3E3E3E;
@@ -120,4 +120,38 @@ main{
 #eduCert{
     text-align: center;
     justify-self: end;
+}
+@media screen and (max-width: 800px) {
+    
+    #personal{
+        display: flex;
+        flex-direction: column;
+    }
+    #summary{
+        display: none;
+    }
+    #list{
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+    }
+    #list li{
+        border: .1em black solid;
+        padding: .25em;
+        align-self: center;
+    }
+    #techSkill{
+        display: none;
+    }
+    #proExp h1{
+        font-size: 1.5em;
+    }
+    #proExp summary {
+        line-height: 1.75em;
+        padding: .5em;
+        font-size: 1.2em;
+    }
+    #proj, #eduCert{
+        justify-content: center;
+    }
 }
