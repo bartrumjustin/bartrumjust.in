@@ -13,14 +13,70 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/screen-v2.css">
-    <link rel="stylesheet" href="print">
+    <!--<link rel="stylesheet" href="print">-->
     <title>Justin Bartrum|Dev</title>
     <link rel="icon" href="media/images/favicon-32x32.png">
     <script></script>
     <noscript>browser does not support JavaScript</noscript>
+    <script>async function getRepoList(username) {
+            const apiUrl = `https://api.github.com/users/${username}/repos`;
+            const repoListElement = document.getElementById('repo-list');
+            const usernameDisplayElement = document.getElementById('username-display');
+
+            // Display the username
+            usernameDisplayElement.textContent = username;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        // Optional: set a recommended header
+                        'Accept': 'application/vnd.github+json',
+                        // Optional: set the API version (best practice)
+                        'X-GitHub-Api-Version': '2022-11-28'
+                        // For private repos, add your token:
+                        // 'Authorization': 'Bearer YOUR_PERSONAL_ACCESS_TOKEN'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.statusText}`);
+                }
+
+                const repositories = await response.json();
+
+                // Clear any previous list items
+                repoListElement.innerHTML = '';
+
+                if (repositories.length === 0) {
+                    repoListElement.innerHTML = '<li>No repositories found or user does not exist.</li>';
+                    return;
+                }
+
+                // Loop through the repositories and add them to the list
+                repositories.forEach(repo => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = repo.html_url;
+                    link.textContent = repo.name;
+                    link.target = '_blank'; // Open link in a new tab
+
+                    listItem.appendChild(link);
+                    
+                    repoListElement.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error("Error fetching repositories:", error);
+                repoListElement.innerHTML = `<li>Error: ${error.message}</li>`;
+            }
+        }
+
+        // Call the function with the desired GitHub username
+         // Replace 'octocat' with your GitHub username
+</script>
 </head>
 
-<body>
+<body onload="getRepoList('bartrumjustin');">
     <header>
         <section id="topBar">
             <article id="personal">
@@ -114,7 +170,7 @@
             <section>
                 <details>
                     <summary>
-                        <strong>Mitten Aromatics</strong><br><i>Lead Developer</i><br>Kalkaska, Michigan | June 2025 - Present
+                        <strong>Mitten Aromatics</strong><br><i>Lead Developer</i><br>Kalkaska, Michigan<br>June 2025 - Present
                     </summary>
 
                     <ul class="bulletpoint">
@@ -132,7 +188,7 @@
             </section>
             <section>
                 <details>
-                <summary><strong>MustWants</strong><br><i>Junior DevOps Engineer</i><br>Remote, Michigan | November 2023 - November 2025</summary>
+                <summary><strong>MustWants</strong><br><i>Junior DevOps Engineer</i><br>Remote, Michigan<br>November 2023 - November 2025</summary>
                 
                     <ul class="bulletpoint">
                         <li>Managed and maintained the codebase for the React Native mobile application and
@@ -147,7 +203,7 @@
             </section>
             <section>
                 <details>
-                <summary><strong>Bell Forklift Inc.</strong><br><i>Lead Field Technician</i><br>Gaylord, Michigan | February 2020 - Present</summary>
+                <summary><strong>Bell Forklift Inc.</strong><br><i>Lead Field Technician</i><br>Gaylord, Michigan<br>February 2020 - Present</summary>
                 <ul class="bulletpoint">
                     <li>Manage a 13,000 sq. mile service territory, diagnosing complex mechanical and
                         electrical systems autonomously.
@@ -159,7 +215,7 @@
             </section>
             <section>
                 <details>
-                <summary><strong>Blog.Bartrumjust.in</strong><br><i>Wordpress / PHP Developer</i><br>Kalkaska, Michigan | Janurary 2025 - Present</summary>
+                <summary><strong>Blog.Bartrumjust.in</strong><br><i>Wordpress / PHP Developer</i><br>Kalkaska, Michigan<br>Janurary 2025 - Present</summary>
                 <ul class="bulletpoint">
                     <li>Developed design, plugin stack and theme to allow for front page viewing of content</li>
                     <li>Implemented forms and backend development to handle SMTP traffic for user communications and
@@ -188,6 +244,10 @@
                     products</li>
                 <li>Products created will be signed by the person who creates or modifies them to log events</li>
                 <li>Console app is still under development, found on GitHub</li>
+            </ul>
+            <h2><span id="username-display"></span>'s Repo List</h2>
+            <ul id="repo-list" class="bulletpoint">
+                <!--Script will populate with Github REST API-->
             </ul>
         </article>
         <article id="eduCert">

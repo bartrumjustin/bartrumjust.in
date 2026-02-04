@@ -117,9 +117,15 @@ main{
     text-align: center;
     justify-self: center;
 }
+#repo-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    text-align: left;
+}
 #eduCert{
     text-align: center;
-    justify-self: end;
+    justify-self: center;
 }
 @media screen and (max-width: 800px) {
     
@@ -150,6 +156,10 @@ main{
         line-height: 1.75em;
         padding: .5em;
         font-size: 1.2em;
+    }
+    #repo-list{
+        display: flex;
+        flex-direction: column;
     }
     #proj, #eduCert{
         justify-content: center;
