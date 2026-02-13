@@ -8,12 +8,16 @@ version: 2.0*/
     --sText: #737373;
     --accent: #A68a64;
 }
+@font-face {
+    font-family: fira;
+    src: url(../fonts/FiraCode-Regular.ttf);
+}
 
 body {
     margin: 0%;
     background-color: var(--backGr);
     color: var(--pText);
-    font-family: 'Inter','Times New Roman', 'san-serif';
+    font-family: fira,'Times New Roman', 'san-serif';
 }
 header{
     background-color: var(--head);
