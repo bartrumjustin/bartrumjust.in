@@ -29,12 +29,11 @@
             try {
                 const response = await fetch(apiUrl, {
                     headers: {
-                        // Optional: set a recommended header
+                        
                         'Accept': 'application/vnd.github+json',
-                        // Optional: set the API version (best practice)
+                        
                         'X-GitHub-Api-Version': '2022-11-28'
-                        // For private repos, add your token:
-                        // 'Authorization': 'Bearer YOUR_PERSONAL_ACCESS_TOKEN'
+                        
                     }
                 });
 
@@ -70,9 +69,6 @@
                 repoListElement.innerHTML = `<li>Error: ${error.message}</li>`;
             }
         }
-
-        // Call the function with the desired GitHub username
-         // Replace 'octocat' with your GitHub username
 </script>
 </head>
 
@@ -81,10 +77,12 @@
         <section id="topBar">
             <article id="personal">
                 <h1>Justin Bartrum</h1>
-                <h3>Kalkaska, Michigan</h3>
+                <h2>Kalkaska, Michigan</h2>
+                <button><a target="_blank" href="mailto:bartrumjustin@gmail.com">Email</a></button>
                 <button><a target="_blank" href="https://linkedin.com/in/justbartdev">Linkedin</a></button>
                 <button><a target="_blank" href="https://github.com/bartrumjustin">GitHub</a></button>
                 <button><a target="_blank" href="./assignments.html">Web Projects (CIT190)</a></button>
+                <button><a target="_blank" href="./media/010426.docx" >Resume Download (.DOCX)</a></button>
             </article>
             <article id="summary">
                 <p>Results-driven Full Stack Developer and DevOps Engineer with experience in PHP, Cloud Infrastructure
@@ -98,7 +96,7 @@
         </section>
         <nav>
             <ul id="list">
-                <li><a href="#techSkill">Technical Skills</a></li>
+                <li id="mobileRemove"><a href="#techSkill">Technical Skills</a></li>
                 <li><a href="#proExp">Professional Experience</a></li>
                 <li><a href="#proj">Key Projects</a></li>
                 <li><a href="#eduCert">Education and Certifications</a></li>

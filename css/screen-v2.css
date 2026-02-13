@@ -33,12 +33,19 @@ header{
     max-width: fit-content;
 }*/
 #topBar button{
-
-    background-color: var(--pText);
+    
+    background-color: #D6C6A1;
+    min-height: 50px;
+    min-width: 100px;
 }
 #topBar a:link{
+    font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
-    color: var(--accent);   
+    color: #3E3E3E;   
+}
+#topBar a:visited{
+    color: #000000;
 }
 #summary{
     max-width: 70%;
@@ -60,6 +67,7 @@ nav{
     justify-content: space-evenly;    
 }
 #list li>a{
+    
     text-decoration: none;
     color: var(--backGr);
 }
@@ -105,11 +113,11 @@ main{
     font-weight: 700;
 }
 .bulletpoint{
-    max-width: 75em;
+    min-width: 80%;
     background-color: #d3d3d3;
     line-height: 2.5;
     border-radius: 2em;
-    margin-left: 1em;
+    margin: .5em .1em;
     text-align: start;
     box-shadow:0 0 10px #a4aea6 ;
 }
@@ -128,24 +136,44 @@ main{
     justify-self: center;
 }
 @media screen and (max-width: 800px) {
-    
+    #topBar{
+        padding: 0;
+        justify-content: center;
+    }
     #personal{
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
+    }
+    #personal button{
+        min-width: 100%;
     }
     #summary{
         display: none;
     }
+    #list>#mobileRemove{
+        display: none;
+    }
     #list{
         display: flex;
+        
         flex-direction: column;
         gap: .5em;
     }
     #list li{
-        border: .1em black solid;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 44px;
+        min-width: 80%;
+        border: .2em black solid;
         padding: .25em;
-        align-self: center;
+        
     }
+    
     #techSkill{
         display: none;
     }
